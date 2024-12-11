@@ -1,33 +1,7 @@
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
-const courses = [
-  {
-    title: 'Fundamentos de JavaScript',
-    description: 'Aprenda os conceitos básicos de JavaScript.',
-    color: 'text-yellow-400',
-    tagColor: 'bg-yellow-500/20 border-yellow-400',
-    professor: 'Gustavo Guanabara',
-    link: 'https://www.cursoemvideo.com/curso/javascript/',
-  },
-  {
-    title: 'Python para Análise de Dados',
-    description: 'Explore como usar Python para analisar dados.',
-    color: 'text-blue-500',
-    tagColor: 'bg-blue-500/20 border-blue-400',
-    professor: 'Profª Ana Costa',
-    link: '/courses/python',
-  },
-  {
-    title: 'Curso de React',
-    description: 'Domine o desenvolvimento com React.js.',
-    color: 'text-purple-500',
-    tagColor: 'bg-purple-500/20 border-purple-400',
-    professor: 'Prof. Carlos Mendes',
-    link: '/courses/react',
-  },
-];
+import { tableCourses, Course } from '../data/coursesData'; 
 
 const LearningCourses = () => {
   const navigate = useNavigate();
@@ -45,7 +19,7 @@ const LearningCourses = () => {
       <div className="relative">
         <h3 className="text-xl font-bold mb-4 text-foreground">Cursos Recomendados</h3>
         <div className="space-y-4">
-          {courses.map((course, index) => (
+          {tableCourses.slice(0, 3).map((course: Course, index: number) => (
             <motion.div
               key={index}
               className="relative p-5 rounded-lg bg-[#1e1e30] border border-gray-700 shadow-glow cursor-pointer hover:shadow-lg transition-shadow group min-h-[160px]"
@@ -54,14 +28,13 @@ const LearningCourses = () => {
               onClick={() => handleNavigation(course.link)}
             >
               {/* Título e Descrição */}
-              <h4 className={`font-medium mb-2 ${course.color} flex items-center text-lg`}> 
-                <BookOpen className="h-6 w-6 mr-2" /> 
+              <h4 className={`font-medium mb-2 ${course.color} flex items-center text-lg`}>
+                <BookOpen className="h-6 w-6 mr-2" />
                 {course.title}
               </h4>
-              <p className="text-muted text-base leading-relaxed">
-                {course.description}
-              </p>
+              <p className="text-muted text-base leading-relaxed">{course.lessons}</p>
 
+              {/* Tag com o professor */}
               <div
                 className={`mt-4 inline-block px-3 py-1 rounded-full text-sm text-foreground border ${course.tagColor}`}
               >

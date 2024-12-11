@@ -2,100 +2,7 @@ import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import { BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
-// Cursos da Tabela
-const tableCourses = [
-  {
-    title: 'CURSO EM VIDEO (Gustavo Guanabara)',
-    lessons: '+2.500 aulas',
-    level: 'Básico ao avançado',
-    bonuses: '8 bônus',
-    certified: 'Sim',
-    price: 'Grátis',
-    professor: 'Prof. Gustavo Guanabara',
-    link: 'https://www.cursoemvideo.com/',
-  },
-  {
-    title: 'Python para Análise de Dados (HASHTAG Treinamentos)',
-    lessons: '+900 aulas',
-    level: 'Básico ao avançado',
-    bonuses: '2 bônus',
-    certified: 'Sim',
-    price: '12x de R$29,64 ou R$297 à vista',
-    professor: 'Hashtag Treinamentos',
-    link: 'https://www.hashtagtreinamentos.com/curso-python',
-  },
-  {
-    title: 'Curso de React do zero ao avançado na pratica (UDEMY)',
-    lessons: '+150 aulas',
-    level: 'Básico ao avançado',
-    bonuses: '4 bônus',
-    certified: 'Sim',
-    price: '12x de R$24,06 ou R$247 à vista',
-    professor: 'Matheus Fraga',
-    link: 'https://www.udemy.com/course/curso-reactjs/?couponCode=KEEPLEARNINGBR',
-  },
-  {
-    title: 'TypeScript para Iniciantes (ORIGAMID)',
-    lessons: '+100 aulas',
-    level: 'Básico ao intermediário',
-    bonuses: '3 bônus',
-    certified: 'Sim',
-    price: '12x de R$22,90 ou R$229 à vista',
-    professor: 'Prof. Marina Silva',
-    link: 'https://www.origamid.com/curso/typescript-para-iniciantes/',
-  },
-  {
-    title: 'Desenvolvimento com Node.js (EBAC)',
-    lessons: '+120 aulas',
-    level: 'Intermediário ao avançado',
-    bonuses: '5 bônus',
-    certified: 'Sim',
-    price: '12x de R$32,90 ou R$329 à vista',
-    professor: 'EBAC',
-    link: 'https://ebaconline.com.br/node-js',
-  },
-];
-
-// Cursos do Carrossel
-const carouselCourses = [
-  {
-    title: 'Curso de C++ Moderno',
-    description: 'Aprenda os fundamentos de C++ e técnicas avançadas.',
-    image: 'https://via.placeholder.com/400x250',
-    professor: 'Prof. João Pedro',
-    link: '/courses/cpp',
-  },
-  {
-    title: 'Machine Learning com Python',
-    description: 'Descubra o mundo do aprendizado de máquina.',
-    image: 'https://via.placeholder.com/400x250',
-    professor: 'Profª Clara Andrade',
-    link: '/courses/machine-learning',
-  },
-  {
-    title: 'Design Responsivo com CSS',
-    description: 'Domine técnicas modernas de design responsivo.',
-    image: 'https://via.placeholder.com/400x250',
-    professor: 'Prof. Diego Monteiro',
-    link: '/courses/css',
-  },
-  {
-    title: 'Introdução à Segurança da Informação',
-    description: 'Aprenda os conceitos fundamentais de segurança digital.',
-    image: 'https://via.placeholder.com/400x250',
-    professor: 'Profª Julia Lima',
-    link: '/courses/security',
-  },
-  {
-    title: 'Desenvolvimento de APIs com FastAPI',
-    description: 'Crie APIs rápidas e escaláveis.',
-    image: 'https://via.placeholder.com/400x250',
-    professor: 'Prof. Victor Santos',
-    link: '/courses/fastapi',
-  },
-];
-
+import { tableCourses, Course } from '../data/coursesData'; 
 const Courses = () => {
   const navigate = useNavigate();
 
@@ -160,7 +67,7 @@ const Courses = () => {
           />
         </div>
 
-        {/* Cabeçalho da página */}
+        {/* Introdução */}
         <div className="text-gray-700 mb-8 leading-relaxed">
           <p className="mb-4">
             Olá, tudo bem? Eu sou Lanna Almeida, apaixonada por tecnologia e desenvolvimento, e hoje estou aqui para
@@ -173,18 +80,6 @@ const Courses = () => {
             essencial para quem quer se destacar em um mercado tão competitivo. Seja você iniciante ou já experiente,
             sempre há algo novo para aprender e se aprimorar.
           </p>
-          <p>
-            Abaixo, você encontrará cursos que não apenas te ensinam as ferramentas e linguagens mais procuradas, mas
-            também preparam você com as habilidades práticas que o mercado de trabalho realmente valoriza. Vamos
-            juntos explorar essas oportunidades incríveis?
-          </p>
-        </div>
-
-        {/* Espaço para Adsense */}
-        <div className="my-8 flex justify-center">
-          <div className="w-full h-[100px] bg-gray-100 border border-gray-300 flex items-center justify-center rounded-lg">
-            <span className="text-gray-400">Espaço para anúncios (Adsense)</span>
-          </div>
         </div>
 
         {/* Tabela de cursos */}
@@ -229,7 +124,7 @@ const Courses = () => {
 
         {/* Carrossel de cursos */}
         <Slider {...settings}>
-          {carouselCourses.map((course, index) => (
+          {tableCourses.slice(3).map((course: Course, index: number) => (
             <motion.div
               key={index}
               className="p-4"
@@ -240,16 +135,11 @@ const Courses = () => {
                 className="relative p-6 rounded-lg bg-gray-100 border border-gray-300 shadow-md cursor-pointer hover:shadow-lg transition-shadow group"
                 onClick={() => handleNavigation(course.link)}
               >
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <h4 className="font-medium mb-2 text-lg text-[rgb(142,68,173)] flex items-center">
                   <BookOpen className="h-5 w-5 mr-2" />
                   {course.title}
                 </h4>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{course.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">{course.lessons}</p>
                 <div className="text-sm text-gray-600">
                   <span className="font-medium">Professor:</span> {course.professor}
                 </div>
