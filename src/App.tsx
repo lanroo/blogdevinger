@@ -11,6 +11,7 @@ import PostPage from './pages/PostPage';
 import ProjectPage from './pages/ProjectPage';
 import Courses from './pages/Courses';
 import Category from './pages/Category';
+import Maintenance from './pages/Maintenance';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/post/:id" element={<PostPage />} />
+              <Route path="*" element={<Maintenance />} />
             </Routes>
           </main>
           <Footer />
