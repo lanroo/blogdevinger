@@ -8,7 +8,7 @@ const courses = [
     description: 'Aprenda os conceitos básicos de JavaScript.',
     color: 'text-yellow-400',
     tagColor: 'bg-yellow-500/20 border-yellow-400',
-    professor: 'Prof. Gustavo Guanabara',
+    professor: 'Gustavo Guanabara',
     link: 'https://www.cursoemvideo.com/curso/javascript/',
   },
   {
@@ -62,11 +62,11 @@ const LearningCourses = () => {
                 {course.description}
               </p>
 
-              <motion.div
-                className={`absolute bottom-4 left-7 px-3 py-1 rounded-md text-sm text-foreground border ${course.tagColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+              <div
+                className={`mt-4 inline-block px-3 py-1 rounded-full text-sm text-foreground border ${course.tagColor}`}
               >
                 {course.professor}
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -79,7 +79,6 @@ const LearningCourses = () => {
         >
           Ver todos os cursos
         </motion.button>
-
       </div>
     </div>
   );
