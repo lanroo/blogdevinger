@@ -14,31 +14,31 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <Link 
               to="/" 
-              className="text-muted hover:text-primary-light transition-colors"
+              className="text-muted hover:text-[rgb(142_68_173_/_var(--tw-bg-opacity))] transition-colors"
             >
               Início
             </Link>
             <Link 
               to="/projects" 
-              className="text-muted hover:text-primary-light transition-colors"
+              className="text-muted hover:text-[rgb(142_68_173_/_var(--tw-bg-opacity))] transition-colors"
             >
               Códigos
             </Link>
             <Link 
               to="/curiosities" 
-              className="text-muted hover:text-primary-light transition-colors"
+              className="text-muted hover:text-[rgb(142_68_173_/_var(--tw-bg-opacity))] transition-colors"
             >
               Curiosidades
             </Link>
             <Link 
               to="/about" 
-              className="text-muted hover:text-primary-light transition-colors"
+              className="text-muted hover:text-[rgb(142_68_173_/_var(--tw-bg-opacity))] transition-colors"
             >
               Sobre Mim
             </Link>
             <Link 
               to="/contact" 
-              className="text-muted hover:text-primary-light transition-colors"
+              className="text-muted hover:text-[rgb(142_68_173_/_var(--tw-bg-opacity))] transition-colors"
             >
               Contato
             </Link>
