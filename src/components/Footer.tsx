@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
           {/* Sobre */}
           <div>
             <h3 className="text-xl font-bold mb-4 hover:text-primary transition-colors">DEVinger</h3>
@@ -52,8 +52,10 @@ const Footer = () => {
 
         {/* Redes Sociais */}
         <div className="mt-12 flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-8">
-          <p className="text-gray-400 text-sm">&copy; {new Date().getFullYear()} DEVinger. Todos os direitos reservados.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <p className="text-gray-400 text-sm text-center md:text-left">
+            &copy; {new Date().getFullYear()} DEVinger. Todos os direitos reservados.
+          </p>
+          <div className="flex justify-center space-x-6 mt-4 md:mt-0">
             <a
               href="https://github.com"
               target="_blank"
