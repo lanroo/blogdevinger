@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
 import FeaturedPosts from '../components/FeaturedPosts';
+import CategoryModal from '../components/CategoryModal';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const backgroundImage =
@@ -26,12 +27,7 @@ const Hero = () => {
             Descubra insights sobre tecnologia, programação e inovação em um só lugar. Explore, aprenda e inspire-se.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/categories"
-              className="bg-primary text-white py-2 px-6 rounded-lg font-medium hover:bg-primary-light hover:text-background transition"
-            >
-              Explorar Categorias
-            </Link>
+            <CategoryModal /> {/* Modal Botão Integrado */}
             <Link
               to="/subscribe"
               className="bg-white text-primary py-2 px-6 rounded-lg font-medium hover:bg-primary-light hover:text-background transition"

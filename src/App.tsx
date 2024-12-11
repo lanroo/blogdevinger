@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import PostPage from './pages/PostPage';
 import ProjectPage from './pages/ProjectPage';
 import Courses from './pages/Courses';
+import Category from './pages/Category';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/courses" element={<Courses />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectPage />} />
+              <Route path="/categories" element={<Category />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/post/:id" element={<PostPage />} />
