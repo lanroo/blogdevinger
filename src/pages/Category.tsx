@@ -36,30 +36,32 @@ const Category = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-primary-light to-primary-dark bg-clip-text text-transparent">
-        Escolha uma Categoria
-      </h1>
-      <p className="text-lg text-center text-muted mb-12">
-        Escolha uma categoria para explorar conteúdos incríveis no DEVinger Blog. Descubra tudo sobre
-        tecnologia, programação e inovação!
-      </p>
-      <div className="space-y-6">
-        {categories.map((category, index) => (
-          <Link
-            key={index}
-            to={category.link}
-            className="block"
-          >
-            <div className="flex items-center bg-[#1e1e30] border border-gray-700 rounded-lg p-6 shadow-glow hover:shadow-md transition-shadow hover:bg-primary/10">
-              <div className="text-primary text-3xl mr-4">{category.icon}</div>
-              <div>
-                <h2 className="text-2xl font-bold mb-1 text-foreground">{category.name}</h2>
-                <p className="text-muted">{category.description}</p>
+    <div className="bg-background min-h-screen">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-primary-light to-primary-dark bg-clip-text text-transparent">
+          Escolha uma Categoria
+        </h1>
+        <p className="text-lg text-center text-muted mb-12">
+          Escolha uma categoria para explorar conteúdos incríveis no DEVinger Blog. Descubra tudo sobre
+          tecnologia, programação e inovação!
+        </p>
+        <div className="space-y-6">
+          {categories.map((category, index) => (
+            <Link
+              key={index}
+              to={category.link}
+              className="block"
+            >
+              <div className="flex items-center bg-[#1e1e30] border border-gray-700 rounded-lg p-6 shadow-glow hover:shadow-lg transition-shadow hover:bg-primary/10">
+                <div className="text-primary text-3xl mr-4">{category.icon}</div>
+                <div>
+                  <h2 className="text-2xl font-bold mb-1 text-foreground">{category.name}</h2>
+                  <p className="text-muted">{category.description}</p>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const CategoryModal = () => {
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true" />
 
         {/* Modal Content */}
-        <div className="relative bg-[#1e1e30] text-foreground rounded-lg shadow-lg w-full max-w-xl mx-auto sm:my-8 max-h-[90vh] overflow-y-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative bg-background text-foreground rounded-lg shadow-lg w-full max-w-xl mx-auto sm:my-8 max-h-[90vh] overflow-y-auto px-4 sm:px-6 lg:px-8">
           {/* Close Button */}
           <button
             onClick={closeModal}
