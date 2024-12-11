@@ -34,29 +34,28 @@ const InteractiveQuiz = () => {
   const isCorrect = selectedAnswer === questions[currentQuestion].correctAnswer;
 
   return (
-    <div className="bg-background text-foreground rounded-lg shadow-glow p-6 my-8 transition-transform hover:scale-105 hover:shadow-lg">
+    <div className="relative bg-background text-foreground rounded-lg shadow-glow p-6 my-8 transition-transform hover:scale-105 hover:shadow-[0_0_20px_rgba(142,68,173,0.6)] border border-transparent hover:border-[rgba(142,68,173,0.6)]">
       <h3 className="text-xl font-bold mb-4">Quiz Tech</h3>
       <div className="mb-6">
         <p className="text-lg mb-4">{questions[currentQuestion].question}</p>
         <div className="space-y-2">
           {questions[currentQuestion].options.map((option, index) => (
             <motion.button
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`w-full p-3 text-left rounded-md border transition-colors ${
-              selectedAnswer === index
-                ? isCorrect
-                  ? 'border-green-500 bg-green-900 text-foreground'
-                  : 'border-red-500 bg-red-900 text-foreground'
-                : 'border-gray-700 bg-background text-muted hover:border-primary hover:bg-primary/10'
-            }`}
-            onClick={() => handleAnswer(index)}
-            disabled={showFeedback}
-          >
-            {option}
-          </motion.button>
-          
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`w-full p-3 text-left rounded-md border transition-colors ${
+                selectedAnswer === index
+                  ? isCorrect
+                    ? 'border-green-500 bg-green-900 text-foreground'
+                    : 'border-red-500 bg-red-900 text-foreground'
+                  : 'border-gray-700 bg-background text-muted hover:border-primary hover:bg-primary/10'
+              }`}
+              onClick={() => handleAnswer(index)}
+              disabled={showFeedback}
+            >
+              {option}
+            </motion.button>
           ))}
         </div>
       </div>
@@ -81,7 +80,7 @@ const InteractiveQuiz = () => {
           </div>
           <Link
             to={`/post/${questions[currentQuestion].relatedPostId}`}
-            className="text-blue-600 hover:text-blue-800 inline-block mt-2"
+            className="text-primary-light hover:text-primary inline-block mt-2"
           >
             Saiba mais sobre este tema →
           </Link>

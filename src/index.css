@@ -6,6 +6,14 @@
 @tailwind utilities;
 
 html {
-  background-color: #1a1a2e; /* Cor de fundo */
-  color: #f1f1f1; /* Cor do texto */
-}
+    background-color: #1a1a2e; 
+    color: #f1f1f1;
+  }
+  
+  section {
+    margin-bottom: 0; 
+  }
+  
+  h1, h2, p {
+    margin: 0;
+  }
