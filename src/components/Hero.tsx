@@ -9,30 +9,32 @@ const Hero = () => {
     <div className="bg-background text-foreground">
       {/* Hero Section */}
       <div
-        className="relative bg-fixed bg-cover bg-center text-white py-24 md:py-32"
+        className="relative bg-fixed bg-cover bg-center text-white py-20 sm:py-24 lg:py-32"
         style={{
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div> 
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        {/* Content */}
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Bem-vindo ao DEVinger Blog
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto">
             Descubra insights sobre tecnologia, programação e inovação em um só lugar. Explore, aprenda e inspire-se.
           </p>
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/categories"
-              className="bg-primary text-white py-2 px-4 rounded-lg font-medium hover:bg-primary-light hover:text-background transition"
+              className="bg-primary text-white py-2 px-6 rounded-lg font-medium hover:bg-primary-light hover:text-background transition"
             >
               Explorar Categorias
             </Link>
             <Link
               to="/subscribe"
-              className="bg-white text-primary py-2 px-4 rounded-lg font-medium hover:bg-primary-light hover:text-background transition"
+              className="bg-white text-primary py-2 px-6 rounded-lg font-medium hover:bg-primary-light hover:text-background transition"
             >
               Assinar Newsletter
             </Link>
